@@ -10,7 +10,7 @@ from azure.identity import DefaultAzureCredential
 from azure.ai.projects import AIProjectClient
 
 # Load environment variables from .env file
-load_dotenv()
+load_dotenv(encoding="utf-16")
 
 def interact_with_agent():
     """Start an interactive chat session with the Trail Guide Agent."""
