@@ -17,14 +17,14 @@ from azure.identity import DefaultAzureCredential
 from azure.ai.projects import AIProjectClient
 
 # Load environment variables from .env file
-load_dotenv()
+load_dotenv(encoding="utf-16")
 
 def load_test_prompts(test_prompts_dir):
     """Load all test prompt files from the test-prompts directory."""
     prompts = {}
     for prompt_file in Path(test_prompts_dir).glob("*.txt"):
         test_name = prompt_file.stem
-        with open(prompt_file, 'r') as f:
+        with open(prompt_file, 'r', encoding='utf-8') as f:
             prompts[test_name] = f.read().strip()
     return prompts
 
