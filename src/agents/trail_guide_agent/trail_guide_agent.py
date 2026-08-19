@@ -6,10 +6,12 @@ from azure.ai.projects import AIProjectClient
 from azure.ai.projects.models import PromptAgentDefinition
 
 # Load environment variables from .env file
+from dotenv import load_dotenv
+
 load_dotenv(encoding="utf-16")
 
 # Read instructions from prompt file
-prompt_file = Path(__file__).parent / 'prompts' / 'v3_instructions.txt'
+prompt_file = Path(__file__).parent / 'prompts' / 'v4_optimized_concise.txt'
 with open(prompt_file, 'r', encoding='utf-8') as f:
     instructions = f.read().strip()
 
